@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.SQLiteDatabase;
+package com.jobHuntingSystem.jobhunter.TheDatabase;
 
 import java.util.*;
 
@@ -7,6 +7,7 @@ import android.content.*; // Context, ContentValues
 import android.database.*; // Cursors
 import android.database.sqlite.*; // SQLiteOpenHelper, SQLiteDatabase
 
+
 /*
  * 1. Add new Student
  * 2. View Students
@@ -14,6 +15,8 @@ import android.database.sqlite.*; // SQLiteOpenHelper, SQLiteDatabase
  * 4. Delete Student*/
 
 public class DBHelper extends SQLiteOpenHelper{
+
+    com.jobHuntingSystem.jobhunter.TheDatabase.User U;
     // Creating a constructor for our database handler.
     public DBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

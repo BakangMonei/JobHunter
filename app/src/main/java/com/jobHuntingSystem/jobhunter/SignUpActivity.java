@@ -2,7 +2,6 @@ package com.jobHuntingSystem.jobhunter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,11 +10,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.*;
 
-import com.jobHuntingSystem.jobhunter.SQLiteDatabase.DBHelper;
+import com.jobHuntingSystem.jobhunter.TheDatabase.DBHelper;
 
 
 public class SignUpActivity extends AppCompatActivity{
-    private DBHelper dbHelper;
+
+    // The Database
+    private com.jobHuntingSystem.jobhunter.TheDatabase.DBHelper dbHelper;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

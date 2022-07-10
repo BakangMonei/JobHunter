@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/pendingJobs"
-        android:title="Jobs" />
+        android:title="Pending Jobs" />
 
     <item
         android:id="@+id/android"

@@ -25,8 +25,7 @@ import android.content.Intent;
 
 
 import com.google.android.material.button.MaterialButton;
-import com.jobHuntingSystem.jobhunter.SQLiteDatabase.DBHelper;
-import com.jobHuntingSystem.jobhunter.socialmedialayouts.*;
+import com.jobHuntingSystem.jobhunter.TheDatabase.DBHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -77,16 +76,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginActivity.this, "Welcome! Please use your instagram details", Toast.LENGTH_SHORT).show();
-                Intent intentInstagram = new Intent(LoginActivity.this, instagram.class);
+                Intent intentInstagram = new Intent(LoginActivity.this, com.jobHuntingSystem.jobhunter.socialmedialayouts.instagram.class);
                 startActivity(intentInstagram);
             }
         });
-
         twittersignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginActivity.this, "Welcome! Please use your Twitter details", Toast.LENGTH_SHORT).show();
-                Intent intentTwitter = new Intent(LoginActivity.this, twitter.class);
+                Intent intentTwitter = new Intent(LoginActivity.this, com.jobHuntingSystem.jobhunter.socialmedialayouts.twitter.class);
                 startActivity(intentTwitter);
             }
         });
@@ -94,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginActivity.this, "Welcome! Please use your Facebook details", Toast.LENGTH_SHORT).show();
-                Intent intentFacebook = new Intent(LoginActivity.this, facebook.class);
+                Intent intentFacebook = new Intent(LoginActivity.this, com.jobHuntingSystem.jobhunter.socialmedialayouts.facebook.class);
                 startActivity(intentFacebook);
             }
         });
@@ -102,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginActivity.this, "Welcome! Please use your Google details", Toast.LENGTH_SHORT).show();
-                Intent intentGoogle = new Intent(LoginActivity.this, google.class);
+                Intent intentGoogle = new Intent(LoginActivity.this, com.jobHuntingSystem.jobhunter.socialmedialayouts.google.class);
                 startActivity(intentGoogle);
             }
         });

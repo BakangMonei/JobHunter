@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.SQLiteDatabase;
+package com.jobHuntingSystem.jobhunter.TheDatabase;
 
 
 import java.util.Objects;

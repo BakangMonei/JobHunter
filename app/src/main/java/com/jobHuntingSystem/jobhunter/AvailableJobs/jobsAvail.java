@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.jobsAvailable;
+package com.jobHuntingSystem.jobhunter.AvailableJobs;
 
 import androidx.appcompat.app.AppCompatActivity;
 

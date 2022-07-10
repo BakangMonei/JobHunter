@@ -14,19 +14,25 @@
         android:theme="@style/Theme.JobHunter"
         tools:targetApi="31">
         <activity
-            android:name=".instagram"
+            android:name=".MenuItems.pendingJobs"
             android:exported="false" />
         <activity
-            android:name=".twitter"
+            android:name=".MenuItems.profile"
             android:exported="false" />
         <activity
-            android:name=".google"
+            android:name=".socialmedialayouts.instagram"
             android:exported="false" />
         <activity
-            android:name=".facebook"
+            android:name=".socialmedialayouts.twitter"
             android:exported="false" />
         <activity
-            android:name=".jobsAvail"
+            android:name=".socialmedialayouts.google"
+            android:exported="false" />
+        <activity
+            android:name=".socialmedialayouts.facebook"
+            android:exported="false" />
+        <activity
+            android:name=".AvailableJobs.jobsAvail"
             android:exported="false" />
         <activity
             android:name=".SuccessfulLogin"

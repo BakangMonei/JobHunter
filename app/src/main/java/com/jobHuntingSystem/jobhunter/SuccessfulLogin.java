@@ -10,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.jobHuntingSystem.jobhunter.jobsAvailable.jobsAvail;
-
 public class SuccessfulLogin extends AppCompatActivity {
 
     @Override
@@ -19,6 +17,7 @@ public class SuccessfulLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_successful_login);
         ImageView ListView = (ImageView) findViewById(R.id.ListView);
+        MenuItem profile = (MenuItem) findViewById(R.id.profile);
         ListView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +31,14 @@ public class SuccessfulLogin extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         // Toast message on menu item clicked
                         Toast.makeText(SuccessfulLogin.this, "You Clicked " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+
+                        // Profile
+                        Intent intentProfile = new Intent(SuccessfulLogin.this, com.jobHuntingSystem.jobhunter.MenuItems.profile.class);
+                        startActivity(intentProfile);
+
+                        // Pending Jobs
+                        Intent pendingJobs = new Intent(SuccessfulLogin.this, com.jobHuntingSystem.jobhunter.MenuItems.pendingJobs.class);
+                        startActivity(pendingJobs);
                         return true;
                     }
                 });
@@ -45,7 +52,7 @@ public class SuccessfulLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SuccessfulLogin.this, "Welcome to job views", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SuccessfulLogin.this, jobsAvail.class);
+                Intent intent = new Intent(SuccessfulLogin.this, com.jobHuntingSystem.jobhunter.AvailableJobs.jobsAvail.class);
                 startActivity(intent);
             }
         });

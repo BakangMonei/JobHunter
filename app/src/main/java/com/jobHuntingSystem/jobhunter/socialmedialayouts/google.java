@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.jobHuntingSystem.jobhunter.R;
-import com.jobHuntingSystem.jobhunter.SuccessfulLogin;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.jobHuntingSystem.jobhunter.R;
+import com.jobHuntingSystem.jobhunter.SuccessfulLogin;
 
 public class google extends AppCompatActivity {
 
