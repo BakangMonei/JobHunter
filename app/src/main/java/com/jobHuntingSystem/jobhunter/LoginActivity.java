@@ -10,26 +10,23 @@ package com.jobHuntingSystem.jobhunter;
  * */
 /*
  * SignUp firebase done*/
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageButton;
-import androidx.appcompat.app.AlertDialog;
 import android.content.Intent;
 
 
 // For linking
-import android.content.Intent;
 
 
 import com.google.android.material.button.MaterialButton;
 import com.jobHuntingSystem.jobhunter.SQLiteDatabase.DBHelper;
+import com.jobHuntingSystem.jobhunter.socialmedialayouts.*;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -72,17 +69,53 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginActivity.this, "Welcome to the SignUp", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                Intent intentSignUp = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intentSignUp);
             }
         });
         instasignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, SuccessfulLogin.class);
-                startActivity(intent);
+                Toast.makeText(LoginActivity.this, "Welcome! Please use your instagram details", Toast.LENGTH_SHORT).show();
+                Intent intentInstagram = new Intent(LoginActivity.this, instagram.class);
+                startActivity(intentInstagram);
             }
         });
+
+        twittersignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Welcome! Please use your Twitter details", Toast.LENGTH_SHORT).show();
+                Intent intentTwitter = new Intent(LoginActivity.this, twitter.class);
+                startActivity(intentTwitter);
+            }
+        });
+        fbsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Welcome! Please use your Facebook details", Toast.LENGTH_SHORT).show();
+                Intent intentFacebook = new Intent(LoginActivity.this, facebook.class);
+                startActivity(intentFacebook);
+            }
+        });
+        googlesignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Welcome! Please use your Google details", Toast.LENGTH_SHORT).show();
+                Intent intentGoogle = new Intent(LoginActivity.this, google.class);
+                startActivity(intentGoogle);
+            }
+        });
+
+        // To be fixed
+        forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
+                Intent intentGoogle = new Intent(LoginActivity.this, SuccessfulLogin.class);
+                startActivity(intentGoogle);
+            }
+        });
+
     }
 }

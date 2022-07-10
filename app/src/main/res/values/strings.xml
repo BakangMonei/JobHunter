@@ -5,6 +5,34 @@
     <!-- link for apply here -->
     <string name="hyperlink"><a href="https://thitoacademics.bac.ac.bw/">ApplyHere</a></string>
     <string name="accreditedCourses"><a href="https://drive.google.com/file/d/1CiXVVVPPrNvfrANdSnrscfwYr_tfUc9Y/view?fbclid=IwAR0LqID-krMVEq_m00RwhTHzHcpCTPX3IB18kov8Xsyh5UvS9c1GTBnlYp8" />Accredited Courses</string>
-
+    <string name="action_settings">Settings</string>
+    <string-array name="alphabets">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
 
 </resources>
