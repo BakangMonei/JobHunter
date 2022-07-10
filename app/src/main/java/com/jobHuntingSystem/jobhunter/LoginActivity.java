@@ -76,5 +76,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        instasignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, SuccessfulLogin.class);
+                startActivity(intent);
+            }
+        });
     }
 }
