@@ -1,18 +1,8 @@
 package com.jobHuntingSystem.jobhunter;
-
-/*
- * 1. Code the login button to get information from database
- * 2. Code the FinAid, Forgot Password and link to the SQLite(Using the update method)
- * 3. Create form for Application of Sponsorship
- * 4. Fix those login buttons for Facebook, Google, Instagram, and twitter with their methods
- * 5. Make userProfile get information for specific student using 'EMAIL' as primary key
- * 6.
- * */
-/*
- * SignUp firebase done*/
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,6 +18,7 @@ import com.google.android.material.button.MaterialButton;
 import com.jobHuntingSystem.jobhunter.TheDatabase.DBHelper;
 
 public class LoginActivity extends AppCompatActivity {
+    String name = "Neiza";
 
     private DBHelper dbHelper;
     @Override
@@ -37,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Boolean e=false, p=false;
 
+        TextView signin = (TextView) findViewById(R.id.signin);
         TextView email = (TextView) findViewById(R.id.username); //
         TextView password = (TextView) findViewById(R.id.password); //
 
@@ -47,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         ImageButton instasignup = (ImageButton) findViewById(R.id.instasignup);//
         ImageButton twittersignup = (ImageButton) findViewById(R.id.twittersignup);//
         ImageButton fbsignup = (ImageButton) findViewById(R.id.fbsignup);//
-        ImageButton googlesignup = (ImageButton) findViewById(R.id.googlesignup);
+        ImageButton googlesignup = (ImageButton) findViewById(R.id.googlesignup);//
 
         dbHelper = new DBHelper(LoginActivity.this);
 
@@ -61,6 +53,11 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intentLogIn = new Intent(LoginActivity.this, SuccessfulLogin.class);
                     startActivity(intentLogIn);
                 }
+                if(TextUtils.isEmpty(emailCheck) || TextUtils.isEmpty(passCheck) )
+                {
+                    Toast.makeText(LoginActivity.this,"Please Enter All Details",Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
             }
         });
@@ -72,6 +69,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intentSignUp);
             }
         });
+
+
+        // Done with all these
         instasignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,14 +104,23 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intentGoogle);
             }
         });
-
-        // To be fixed
         forgotpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
-                Intent intentGoogle = new Intent(LoginActivity.this, SuccessfulLogin.class);
+                Intent intentGoogle = new Intent(LoginActivity.this, com.jobHuntingSystem.jobhunter.ForgotPasswordActivity.class);
                 startActivity(intentGoogle);
+            }
+        });
+
+
+        // Delete when done with the app
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Welcome to the application " + name, Toast.LENGTH_SHORT).show();
+                Intent intentRemove = new Intent(LoginActivity.this, com.jobHuntingSystem.jobhunter.SuccessfulLogin.class);
+                startActivity(intentRemove);
             }
         });
 

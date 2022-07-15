@@ -6,17 +6,23 @@
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1895" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1895" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/drawable/icons_layout.xml" value="0.1875" />
-        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_jobs_avail.xml" value="0.25" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_job1.xml" value="0.1359375" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_job2.xml" value="0.1359375" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_job3.xml" value="0.125" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_jobs_avail.xml" value="0.2" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_listview.xml" value="0.13515625" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_login.xml" value="0.18125" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_pending_jobs.xml" value="0.125" />
-        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_profile.xml" value="0.1359375" />
-        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_sign_up.xml" value="0.18125" />
-        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_successful_login.xml" value="0.22" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_pending_jobs.xml" value="0.2" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_search.xml" value="0.20279720279720279" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/activity_successful_login.xml" value="0.33" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/facebook_activity.xml" value="0.1359375" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/google_activity.xml" value="0.1359375" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/instagram_activity.xml" value="0.125" />
+        <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/listview_item.xml" value="0.1359375" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/mylist.xml" value="0.18125" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/splashfile.xml" value="0.16822916666666668" />
         <entry key="..\:/Users/cse20-018/Desktop/JobHunter/app/src/main/res/layout/twitter_activity.xml" value="0.125" />

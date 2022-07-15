@@ -88,7 +88,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     // Method for reading all Users
-    public ArrayList<User> readUser(){
+    public ArrayList<com.jobHuntingSystem.jobhunter.TheDatabase.User> readUser(){
         SQLiteDatabase db = this.getReadableDatabase(); // On this line we are creating a database for reading our database.
         Cursor cursorUser = db.rawQuery("SELECT * FROM " + TABLE_NAME, null); // This line we are creating a cursor with query to read data from database.
 
@@ -117,7 +117,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     // Method to update User info
-    public void updateUser(User user){
+    public void updateUser(com.jobHuntingSystem.jobhunter.TheDatabase.User user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -137,19 +137,11 @@ public class DBHelper extends SQLiteOpenHelper{
         db.close();
     }
     // forgot password for sqlite
-    public void changeForgottenPass(changePass change){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        values.put(EMAIL_COL, change.emailChange);
-        values.put(PASS_COL, change.password1);
-        values.put(REPASS_COL, change.password2);
-        db.update(TABLE_NAME, values, EMAIL_COL + " = ?", new String[] {String.valueOf(change.getEmailChange())});
-        db.close();
+    public void changeForgottenPass(){
     }
 
     // Method for deleting User
-    public void deleteStudent(User delUser){
+    public void deleteStudent(com.jobHuntingSystem.jobhunter.TheDatabase.User delUser){
         SQLiteDatabase db = this.getWritableDatabase();
         // Delete user by email
         db.delete(TABLE_NAME, EMAIL_COL + " = ?", new String[] {String.valueOf(delUser.getEmail())});
@@ -162,5 +154,14 @@ public class DBHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
+    public void changeForgottenPass(com.jobHuntingSystem.jobhunter.TheDatabase.changePass change) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
 
+        values.put(EMAIL_COL, change.emailChange);
+        values.put(PASS_COL, change.password1);
+        values.put(REPASS_COL, change.password2);
+        db.update(TABLE_NAME, values, EMAIL_COL + " = ?", new String[] {String.valueOf(change.getEmailChange())});
+        db.close();
+    }
 }

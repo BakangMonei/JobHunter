@@ -26,7 +26,7 @@
     <ImageView
         android:id="@+id/ListView"
         android:layout_width="45dp"
-        android:layout_height="49dp"
+        android:layout_height="45dp"
         app:srcCompat="@drawable/ic_baseline_person_outline_24" />
 
     <ImageView
@@ -54,4 +54,135 @@
         android:text="Jobs Available"
         android:textAlignment="center"
         android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/applyNow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/mainMenu"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="278dp"
+        app:srcCompat="@drawable/apply_now" />
+
+    <TextView
+        android:id="@+id/applyNowTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/applyNow"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        android:text="Apply Now"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/upload"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/jobsAvailableTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/untitled_org" />
+
+    <TextView
+        android:id="@+id/uploadTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upload"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="2dp"
+        android:text="Upload"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/applyNowTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="105dp"
+        app:srcCompat="@drawable/search" />
+
+    <TextView
+        android:id="@+id/searchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:text="Search"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/print"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/uploadTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/print" />
+
+    <TextView
+        android:id="@+id/printTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/print"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="2dp"
+        android:text="Print"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/pendingJobsImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/searchTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="105dp"
+        app:srcCompat="@drawable/pending_jobs" />
+
+    <TextView
+        android:id="@+id/pendingJobsTextV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pendingJobsImageView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginRight="91dp"
+        android:text="Pending Jobs"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
 </RelativeLayout>

@@ -8,11 +8,4 @@
         android:id="@+id/pendingJobs"
         android:title="Pending Jobs" />
 
-    <item
-        android:id="@+id/android"
-        android:title="Android" />
-
-    <item
-        android:id="@+id/react_native"
-        android:title="React Native" />
 </menu>

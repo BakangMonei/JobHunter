@@ -77,6 +77,7 @@ public class SignUpActivity extends AppCompatActivity{
                 }
                 if(Password == rePassword && rePassword == Password){
                     Toast.makeText(SignUpActivity.this,"Passwords do not match",Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else{
                     // On below line we are calling a method to add new user to sqlite data and pass all our values to it.
