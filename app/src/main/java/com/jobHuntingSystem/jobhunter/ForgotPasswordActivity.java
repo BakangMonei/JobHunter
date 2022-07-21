@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jobHuntingSystem.jobhunter.TheDatabase.DBHelper;
-
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     private DBHelper dbHelper;

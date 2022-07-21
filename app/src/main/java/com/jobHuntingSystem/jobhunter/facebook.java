@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.socialmedialayouts;
+package com.jobHuntingSystem.jobhunter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
-import com.jobHuntingSystem.jobhunter.R;
-import com.jobHuntingSystem.jobhunter.SuccessfulLogin;
 
 public class facebook extends AppCompatActivity {
 

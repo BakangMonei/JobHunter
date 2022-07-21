@@ -1,28 +1,43 @@
 package com.jobHuntingSystem.jobhunter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.*;
 
-import com.jobHuntingSystem.jobhunter.TheDatabase.DBHelper;
+// Firebase
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 
 public class SignUpActivity extends AppCompatActivity{
 
     // The Database
-    private com.jobHuntingSystem.jobhunter.TheDatabase.DBHelper dbHelper;
+    // DBHelper dbHelper;
+
+    // Firebase
+    private DatabaseReference mRootRef;
+    private FirebaseAuth mAuth;
+
+    private FirebaseDatabase database;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-        dbHelper = new DBHelper(SignUpActivity.this);
+        // FireBase
+        mRootRef = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         TextView RegistrationName = (TextView) findViewById(R.id.RegistrationName);
         TextView firstNameView = (TextView) findViewById(R.id.firstNameView);
@@ -49,7 +64,10 @@ public class SignUpActivity extends AppCompatActivity{
         EditText registerCountry = (EditText) findViewById(R.id.registerCountry);
         EditText registerIDPass = (EditText) findViewById(R.id.registerIDPass);
 
+
         Button registerButton = (Button) findViewById(R.id.registerButton);
+        // dbHelper = new DBHelper(this);
+
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,36 +87,62 @@ public class SignUpActivity extends AppCompatActivity{
                 if(TextUtils.isEmpty(email) || (TextUtils.isEmpty(firstName)) || (TextUtils.isEmpty(lastName)) || (TextUtils.isEmpty(Password)) || (TextUtils.isEmpty(rePassword) || (TextUtils.isEmpty(DOB) || (TextUtils.isEmpty(Gender) || (TextUtils.isEmpty(phoneNumber) || (TextUtils.isEmpty(Address) || TextUtils.isEmpty(Country) || TextUtils.isEmpty(IDPassport)))))))
                 {
                     Toast.makeText(SignUpActivity.this,"Please Enter All Details",Toast.LENGTH_SHORT).show();
-                    return;
                 }
                 if(Password.length()<6 || rePassword.length() < 6){
                     Toast.makeText(SignUpActivity.this,"Password Too Short !",Toast.LENGTH_SHORT).show();
-                    return;
                 }
                 if(Password == rePassword && rePassword == Password){
                     Toast.makeText(SignUpActivity.this,"Passwords do not match",Toast.LENGTH_SHORT).show();
-                    return;
                 }
                 else{
-                    // On below line we are calling a method to add new user to sqlite data and pass all our values to it.
-                    dbHelper.addNewUser(email, firstName, lastName, Gender, Address, Country, IDPassport, DOB, phoneNumber, Password, rePassword);
-                     //courseNameEdt.setText("");
-                    registerEmail.setText("");
-                    registerFirstName.setText("");
-                    registerLastName.setText("");
-                    registerPassword.setText("");
-                    registerRePass.setText("");
-                    registerDOB.setText("");
-                    registerGender.setText("");
-                    registerPhoneNumber.setText("");
-                    registerPostalAddress.setText("");
-                    registerCountry.setText("");
-                    registerIDPass.setText("");
-                    // after adding the data we are displaying a toast message.
-                    Toast.makeText(SignUpActivity.this, "Hi " + lastName + ", you have been added.", Toast.LENGTH_SHORT).show();
-
+                    registerUser(email, firstName, lastName, Password, rePassword, DOB, Gender, phoneNumber, Address, Country, IDPassport);
                 }
+            }
+        });
+    }
+    public void registerUser(String registerEmail, String registerFirstName,
+                                String registerLastName, String registerPassword,
+                                String registerRePass, String registerDOB,
+                                String registerGender, String registerPhoneNumber,
+                                String registerPostalAddress, String registerCountry,
+                                String registerIDPass){
 
+
+        mAuth.createUserWithEmailAndPassword(registerEmail,registerPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>(){
+            public void onSuccess(AuthResult authResult){
+                HashMap<String,Object> map = new HashMap<>();
+                map.put("email", registerEmail);
+                map.put("firstName", registerFirstName);
+                map.put("lastName", registerLastName);
+                map.put("Password", registerPassword);
+                map.put("RePassword", registerRePass);
+                map.put("DOB", registerDOB);
+                map.put("Gender", registerGender);
+                map.put("phoneNumber", registerPhoneNumber);
+                map.put("address", registerPostalAddress);
+                map.put("Country", registerCountry);
+                map.put("IDPassword", registerIDPass);
+
+
+                mRootRef.child("Users").child(mAuth.getCurrentUser().getUid()).setValue(map)
+                        .addOnCompleteListener(new OnCompleteListener<Void>(){
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Toast.makeText(SignUpActivity.this,"Successfully Registered", Toast.LENGTH_LONG).show();
+                                    Intent intent= new Intent(SignUpActivity.this, LoginActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(SignUpActivity.this,e.getMessage().toString(),
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

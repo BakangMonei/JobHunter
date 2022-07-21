@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.TheDatabase;
+package com.jobHuntingSystem.jobhunter;
 
 import java.util.*;
 
@@ -16,7 +16,7 @@ import android.database.sqlite.*; // SQLiteOpenHelper, SQLiteDatabase
 
 public class DBHelper extends SQLiteOpenHelper{
 
-    com.jobHuntingSystem.jobhunter.TheDatabase.User U;
+    User U;
     // Creating a constructor for our database handler.
     public DBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -63,12 +63,14 @@ public class DBHelper extends SQLiteOpenHelper{
         db.execSQL(query); // At last we are calling a exec sql method to execute above sql query
     }
 
-    // Method for adding new User to our sqlite database.
-    public void addNewUser(String email, String firstName, String lastName, String Gender, String Address, String Country, String IDPassport, String DOB, String phoneNumber, String Password, String rePassword){
-        SQLiteDatabase db = this.getWritableDatabase(); // This line we are creating a variable for our sqlite database and calling writable method as we are writing data in our database.
-        ContentValues values = new ContentValues();// This line we are creating a variable for content values.
 
-        // Below lines we are passing all values along with its key and value pair.
+    // Add new User
+    public Boolean addNewUser(String email, String firstName, String lastName,
+                                 String Gender, String Address, String Country,
+                                 String IDPassport, String DOB, String phoneNumber,
+                                 String Password, String rePassword){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
         values.put(EMAIL_COL, email);
         values.put(FIRSTNAME_COL, firstName);
         values.put(LASTNAME_COL, lastName);
@@ -80,15 +82,16 @@ public class DBHelper extends SQLiteOpenHelper{
         values.put(PHONENUMBER_COL, phoneNumber);
         values.put(PASS_COL, Password);
         values.put(REPASS_COL, rePassword);
-
-        // After adding all values we are passing content values to our table.
-        db.insert(TABLE_NAME, null,values);
-        // At last we are closing our database after adding database.
-        db.close();
+        long result= DB.insert(DB_NAME,null,values);
+        if (result == -1){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     // Method for reading all Users
-    public ArrayList<com.jobHuntingSystem.jobhunter.TheDatabase.User> readUser(){
+    public ArrayList<User> readUser(){
         SQLiteDatabase db = this.getReadableDatabase(); // On this line we are creating a database for reading our database.
         Cursor cursorUser = db.rawQuery("SELECT * FROM " + TABLE_NAME, null); // This line we are creating a cursor with query to read data from database.
 
@@ -117,7 +120,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     // Method to update User info
-    public void updateUser(com.jobHuntingSystem.jobhunter.TheDatabase.User user){
+    public void updateUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -141,7 +144,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     // Method for deleting User
-    public void deleteStudent(com.jobHuntingSystem.jobhunter.TheDatabase.User delUser){
+    public void deleteStudent(User delUser){
         SQLiteDatabase db = this.getWritableDatabase();
         // Delete user by email
         db.delete(TABLE_NAME, EMAIL_COL + " = ?", new String[] {String.valueOf(delUser.getEmail())});
@@ -154,7 +157,7 @@ public class DBHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
-    public void changeForgottenPass(com.jobHuntingSystem.jobhunter.TheDatabase.changePass change) {
+    public void changeForgottenPass(changePass change) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 

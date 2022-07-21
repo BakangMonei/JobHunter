@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.MenuItems;
+package com.jobHuntingSystem.jobhunter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SearchView;
-
-import com.jobHuntingSystem.jobhunter.R;
 
 import java.util.ArrayList;
 

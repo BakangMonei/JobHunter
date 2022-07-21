@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "521668525434",
+    "project_id": "job-hunter-3f63a",
+    "storage_bucket": "job-hunter-3f63a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521668525434:android:3ab7e31efb279948bfaac3",
+        "android_client_info": {
+          "package_name": "com.jobHuntingSystem.jobhunter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521668525434-jnld97m5keu6e6n921qm9chf3iq19qvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW49XiZuQhYm-GnqsXkLN124O2PR_aa2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521668525434-jnld97m5keu6e6n921qm9chf3iq19qvp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

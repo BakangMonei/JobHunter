@@ -1,5 +1,5 @@
 
-package com.jobHuntingSystem.jobhunter.AvailableJobs.jobsForApplying;
+package com.jobHuntingSystem.jobhunter;
 
 import androidx.appcompat.app.AppCompatActivity;
 

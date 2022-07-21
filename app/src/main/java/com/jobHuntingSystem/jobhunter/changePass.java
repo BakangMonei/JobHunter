@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.TheDatabase;
+package com.jobHuntingSystem.jobhunter;
 
 import android.content.Context;
 

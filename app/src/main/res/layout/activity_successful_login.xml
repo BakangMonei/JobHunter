@@ -38,7 +38,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="105dp"
         android:layout_marginLeft="105dp"
-        android:layout_marginTop="161dp"
+        android:layout_marginTop="150dp"
         app:srcCompat="@drawable/briefcase" />
 
     <TextView
@@ -62,9 +62,9 @@
         android:layout_below="@+id/mainMenu"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="161dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="105dp"
-        android:layout_marginRight="278dp"
+        android:layout_marginRight="97dp"
         app:srcCompat="@drawable/apply_now" />
 
     <TextView
@@ -135,14 +135,14 @@
 
     <ImageView
         android:id="@+id/print"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
         android:layout_below="@+id/uploadTextView"
+        android:layout_marginTop="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="105dp"
         android:layout_marginLeft="105dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         app:srcCompat="@drawable/print" />
 
     <TextView
@@ -161,12 +161,12 @@
 
     <ImageView
         android:id="@+id/pendingJobsImageView"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/searchTextView"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/searchTextView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="105dp"
         android:layout_marginRight="105dp"
         app:srcCompat="@drawable/pending_jobs" />
@@ -182,6 +182,58 @@
         android:layout_marginEnd="91dp"
         android:layout_marginRight="91dp"
         android:text="Pending Jobs"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/mapImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/printTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/map_location" />
+
+    <TextView
+        android:id="@+id/mapTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mapImageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="2dp"
+        android:text="MAP"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/logOutImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/pendingJobsTextV"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="105dp"
+        app:srcCompat="@drawable/log_out" />
+
+    <TextView
+        android:id="@+id/logOutTextV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logOutImageView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginRight="109dp"
+        android:text="LogOut"
         android:textAlignment="center"
         android:textColor="@color/white" />
 

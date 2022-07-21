@@ -11,8 +11,6 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 public class SuccessfulLogin extends AppCompatActivity {
 
     @Override
@@ -24,13 +22,15 @@ public class SuccessfulLogin extends AppCompatActivity {
         MenuItem pro = (MenuItem) findViewById(R.id.profile);
 
         // ImageView
-        ImageView ListView = (ImageView) findViewById(R.id.ListView);
-        ImageView jobsAvailableImageView = (ImageView) findViewById(R.id.jobsAvailableImageView); //
-        ImageView upload = (ImageView) findViewById(R.id.upload);
-        ImageView print = (ImageView) findViewById(R.id.print);
-        ImageView applyNow = (ImageView) findViewById(R.id.applyNow);
-        ImageView search = (ImageView) findViewById(R.id.search); //
-        ImageView pendingJobsImageView = (ImageView) findViewById(R.id.pendingJobsImageView);
+        ImageView ListView = (ImageView) findViewById(R.id.ListView); // Done & Working
+        ImageView jobsAvailableImageView = (ImageView) findViewById(R.id.jobsAvailableImageView); // Done & Working
+        ImageView upload = (ImageView) findViewById(R.id.upload); // Done & Working
+        ImageView applyNow = (ImageView) findViewById(R.id.applyNow); // Done & Working
+        ImageView search = (ImageView) findViewById(R.id.search); // Done & Working
+        ImageView pendingJobsImageView = (ImageView) findViewById(R.id.pendingJobsImageView); // Done & Working
+        ImageView print = (ImageView) findViewById(R.id.print); //
+        ImageView mapImageView = (ImageView) findViewById(R.id.mapImageView); // Done & Working
+        ImageView logOutImageView = (ImageView) findViewById(R.id.logOutImageView); // Done & Working
 
         // TextView
         TextView mainMenu = (TextView) findViewById(R.id.mainMenu);
@@ -40,6 +40,9 @@ public class SuccessfulLogin extends AppCompatActivity {
         TextView applyNowTextView = (TextView) findViewById(R.id.applyNowTextView);
         TextView searchTextView = (TextView) findViewById(R.id.searchTextView);
         TextView pendingJobsTextV = (TextView) findViewById(R.id.pendingJobsTextV);
+        TextView logOutTextV = (TextView) findViewById(R.id.logOutTextV);
+        TextView mapTextView = (TextView) findViewById(R.id.mapTextView);
+
 
 
 
@@ -56,7 +59,7 @@ public class SuccessfulLogin extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         // Toast message on menu item clicked
                         Toast.makeText(SuccessfulLogin.this, "You Clicked " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(SuccessfulLogin.this, com.jobHuntingSystem.jobhunter.MenuItems.profile.class);
+                        Intent intent = new Intent(SuccessfulLogin.this, profile.class);
                         startActivity(intent);
                         return true;
                     }
@@ -69,24 +72,56 @@ public class SuccessfulLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SuccessfulLogin.this, "Welcome to job views", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SuccessfulLogin.this, com.jobHuntingSystem.jobhunter.AvailableJobs.jobsAvail.class);
+                Intent intent = new Intent(SuccessfulLogin.this, jobsAvail.class);
                 startActivity(intent);
             }
         });
-
-        upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SuccessfulLogin.this, "Search anything here", Toast.LENGTH_SHORT).show();
-                Intent intentSearch = new Intent(SuccessfulLogin.this, com.jobHuntingSystem.jobhunter.MenuItems.SearchActivity.class);
+                Intent intentSearch = new Intent(SuccessfulLogin.this, SearchActivity.class);
                 startActivity(intentSearch);
+            }
+        });
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SuccessfulLogin.this, "Click The Image to Upload", Toast.LENGTH_SHORT).show();
+                Intent intentUpload = new Intent(SuccessfulLogin.this, UploadActivity.class);
+                startActivity(intentUpload);
+            }
+        });
+        applyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SuccessfulLogin.this, "Welcome to The Apply For Job section", Toast.LENGTH_SHORT).show();
+                Intent applyIntent = new Intent(SuccessfulLogin.this, ApplyNowActivity.class);
+                startActivity(applyIntent);
+            }
+        });
+        pendingJobsImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SuccessfulLogin.this, "Welcome to Pending Jobs section", Toast.LENGTH_SHORT).show();
+                Intent intentPendingJobs = new Intent(SuccessfulLogin.this, pendingJobs.class);
+                startActivity(intentPendingJobs);
+            }
+        });
+        logOutImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SuccessfulLogin.this, "Successfully Logged Out", Toast.LENGTH_SHORT).show();
+                Intent intentSignOut = new Intent(SuccessfulLogin.this, LoginActivity.class);
+                startActivity(intentSignOut);
+            }
+        });
+        mapImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SuccessfulLogin.this, "Welcome To Google Map", Toast.LENGTH_SHORT).show();
+                Intent intentSignOut = new Intent(SuccessfulLogin.this, MapsActivity.class);
+                startActivity(intentSignOut);
             }
         });
     }

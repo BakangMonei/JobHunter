@@ -1,6 +1,6 @@
-package com.jobHuntingSystem.jobhunter.MenuItems;
+package com.jobHuntingSystem.jobhunter;
 
-import com.jobHuntingSystem.jobhunter.TheDatabase.User;
+import com.jobHuntingSystem.jobhunter.User;
 
 import java.util.Objects;
 

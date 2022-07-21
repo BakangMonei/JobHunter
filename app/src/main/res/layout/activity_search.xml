@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuItems.SearchActivity"
+    tools:context=".SearchActivity"
     android:background="@color/back_blue">
 
     <!-- set query string of an search view -->

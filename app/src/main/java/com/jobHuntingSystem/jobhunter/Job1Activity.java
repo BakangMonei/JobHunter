@@ -1,4 +1,4 @@
-package com.jobHuntingSystem.jobhunter.AvailableJobs.jobsForApplying;
+package com.jobHuntingSystem.jobhunter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.jobHuntingSystem.jobhunter.R;
 
-public class Job2Activity extends AppCompatActivity {
+public class Job1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_job2);
+        setContentView(R.layout.activity_job1);
     }
 }

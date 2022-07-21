@@ -1,11 +1,14 @@
-package com.jobHuntingSystem.jobhunter.TheDatabase;
+package com.jobHuntingSystem.jobhunter;
 
 
 import java.util.Objects;
 
 public class User {
     // Attributes
-    public String email,firstName, lastName,  Gender, Address, Country, IDPassport, DOB, phoneNumber, Password, rePassword;
+    public String email,firstName, lastName,  Gender,
+            Address, Country, IDPassport,
+            DOB, phoneNumber, Password,
+            rePassword;
 
     // Empty Constructors
     public User(){

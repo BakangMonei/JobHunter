@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuItems.pendingJobs">
+    tools:context=".pendingJobs">
 
     <TextView
         android:id="@+id/pendingJobsTextView"
@@ -21,4 +21,33 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/appliedJobsView"
+        android:layout_width="878dp"
+        android:layout_height="662dp"
+        android:layout_below="@+id/pendingJobsTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"
+        android:hint="DETAILS"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+    <Button
+        android:id="@+id/loadJobsButton"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="105dp"
+        android:layout_marginRight="105dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/darkBlue"
+        android:text="Load" />
 </RelativeLayout>
